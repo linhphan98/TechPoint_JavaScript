@@ -42,7 +42,7 @@ const food = val => {
 export const renderRecipe = (recipe, isLiked) => {
 	const markup = `
 		<figure class="recipe__fig">
-                <img src="${recipe.image}" alt="${recipe.name}" class="recipe__img">
+                <img id = "top_Image" src="${recipe.image}" alt="${recipe.id}" class="recipe__img">
                 <h1 class="recipe__title">
                     <span>${recipe.name}</span>
                 </h1>

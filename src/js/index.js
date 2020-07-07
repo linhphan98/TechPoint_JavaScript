@@ -84,6 +84,7 @@ const controlRecipe = async () => {
 			// Render recipe
 			clearLoader(); 
 			// whenever we reload the page we do not have the state.Likes property yet
+			// databaseView.getInfo(state.recipe)
 			recipeView.renderRecipe(state.recipe, state.likes.isLiked(id))
 
 		}catch (error){
