@@ -343,19 +343,16 @@
         </div>
 
         <div class="shopping">        
-            <h2 class="heading-2">In-Restaurant Counter: <div class="counter" id = 'demo'> </div></h2>
-            <button id = "counterButton" onclick="myFunction()" class="heading-2">Show</button>
+            <h2 class="heading-2">In-Restaurant Counter: <div class="counter" id = 'demo'> </div>
             <script>
                 function myFunction() {
                     var id = jQuery("#top_Image").attr('alt');
-                    const button = document.getElementById('counterButton');
-                    button.parentNode.removeChild(button);
                     $.get( "http://localhost:3000/" + id, function( data ) {
-
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
                 }   
             </script>
+            </h2>
             <h2 class="heading-2">Available Pictures</h2>
 
             <ul class="shopping__list">

@@ -68,6 +68,7 @@ const controlRecipe = async () => {
 	if(id){
 		// Prepare UI for changes
 		recipeView.clearRecipe()
+		listView.clearCounter()
 		listView.clearViews()
 		renderLoader(elements.recipe)
 

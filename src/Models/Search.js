@@ -27,7 +27,7 @@ export default class Search{
 			await yelpREST(`/businesses/search`, { 
 				params: {
 					location: `${this.location}`,
-					limit : 15
+					limit : 2
 				} 	
 			}).then(({ data }) => {
 				this.result = data;
