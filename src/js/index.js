@@ -1,8 +1,8 @@
 import Search from '../Models/Search'
-import Recipe from '../Models/Recipe'
+import Restaurant from '../Models/Restaurant'
 import List from '../Models/List'
 import Likes from '../Models/Likes'
-import * as recipeView from '../Views/recipeView'
+import * as restaurantView from '../Views/restaurantView'
 import * as searchView from '../Views/searchView'
 import * as listView from '../Views/listView'
 import * as likesView from '../Views/likesView'
@@ -10,9 +10,9 @@ import {elements, renderLoader, clearLoader} from '../Views/base'
 
 /*	Global state of the app 
 	- Search object : search query and search result
-	- Current recipe object 
-	- Shopping list object
-	- Liked recipes
+	- Current restaurants object 
+	- Photos
+	- Liked restaurants
 */
 const state = {};
 
@@ -32,7 +32,7 @@ const controlSearch = async () => {
 		renderLoader(elements.searchRes)
 
 		try{
-			// Search for recipe - wait until the promise return
+			// Search for restaurants - wait until the promise return
 			await state.search.getResult()
 
 			// Render result on UI
@@ -61,63 +61,60 @@ elements.searchResPages.addEventListener('click', e => {
 	}
 })
 
-// RECIPE CONTROLLER
-const controlRecipe = async () => {
+// RESTAURANT CONTROLLER
+const controlRestaurant = async () => {
 	// Get id from URL 
 	const id = window.location.hash.replace('#', ''); 
 	if(id){
 		// Prepare UI for changes
-		recipeView.clearRecipe()
+		restaurantView.clearRestaurant()
 		listView.clearCounter()
 		listView.clearViews()
-		renderLoader(elements.recipe)
+		renderLoader(elements.restaurant)
 
-		// Create new recipe object
-		state.recipe = new Recipe(id)
+		// Create new restaurant object
+		state.restaurant = new Restaurant(id)
 
 		try{
-			// Get recipe data and parse ingredients
-			await state.recipe.getRecipe(); 
+			// Get restaurant data and parse ingredients
+			await state.restaurant.getRestaurant(); 
 
-			// Calculate servings and data 
-			state.recipe.calcServing();
-
-			// Render recipe
+			// Render restaurant
 			clearLoader(); 
 			// whenever we reload the page we do not have the state.Likes property yet
-			// databaseView.getInfo(state.recipe)
-			recipeView.renderRecipe(state.recipe, state.likes.isLiked(id))
+			// databaseView.getInfo(state.restaurant)
+			restaurantView.renderRestaurant(state.restaurant, state.likes.isLiked(id))
 
 		}catch (error){
 			console.log(error)
-			alert("Error processing recipe")
+			alert("Error processing restaurant")
 		}
 
 		state.list = new List()
 		// add each ingredient to the list 
-		state.recipe.photos.forEach(el => {
+		state.restaurant.photos.forEach(el => {
 			const item = state.list.addItem(el)
 			listView.renderItem(item)
 		})
 	}
 }
 
-// window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('hashchange', controlRestaurant);
 // Ex: the user book mark the page with id => this will make it work
-// window.addEventListener('load', controlRecipe)
-['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe))
+// window.addEventListener('load', controlRestaurant)
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRestaurant))
 
 // LIKES CONTROLLER
 const controlLikes = () => {
 	if(!state.likes) {
 		state.likes = new Likes()
 	}
-	const currentID = state.recipe.id;
+	const currentID = state.restaurant.id;
 
-	// User has not yet liked the current recipe
+	// User has not yet liked the current restaurant
 	if(!state.likes.isLiked(currentID)){
 		// Add like to the state
-		const newLike = state.likes.addLike(currentID, state.recipe.name, state.recipe.rating, state.recipe.image)
+		const newLike = state.likes.addLike(currentID, state.restaurant.name, state.restaurant.rating, state.restaurant.image)
 		
 		// Toggle the button 
 		likesView.toggleLikeButton(true)
@@ -125,7 +122,7 @@ const controlLikes = () => {
 		// Add like to the UI 
 		likesView.renderLikes(newLike)
 
-	// User has liked the current recipe
+	// User has liked the current restaurant
 	}else{
 		// Remove like from the state
 		state.likes.deleteLike(currentID)
@@ -140,7 +137,7 @@ const controlLikes = () => {
 	likesView.toggleLikeMenu(state.likes.getNumOfLikes())
 }
 
-// Restore liked recipes when the page load
+// Restore liked restaurants when the page load
 window.addEventListener('load', () => {
 	state.likes = new Likes()
 
@@ -155,24 +152,9 @@ window.addEventListener('load', () => {
 
 })
  
-// Handling recipe plus and minus buttons
-// all of the target class are all inside of this recipe parent class in html code
-elements.recipe.addEventListener('click', e => {
-	if(e.target.matches('.btn-decrease, .btn-decrease *')){
-		// click on button or any child of that button
-		// Decrease button 
-		if(state.recipe.seating > 1){
-			state.recipe.updateServing('dec')
-			recipeView.updateServingIngredient(state.recipe)
-		}
-	}else if(e.target.matches('.btn-increase, .btn-increase *')){
-		// Increase Button
-		state.recipe.updateServing('inc')
-		recipeView.updateServingIngredient(state.recipe)
-	}else if(e.target.matches('.recipe__btn--add, .recipe__btn--add *')){
-		// Add ingredients to shopping list
-		controlList()
-	}else if(e.target.matches('.recipe__love, .recipe__love *')){
+// all of the target class are all inside of this restaurant parent class in html code
+elements.restaurant.addEventListener('click', e => {
+	if(e.target.matches('.restaurant__love, .restaurant__love *')){
 		// Like control
 		controlLikes()
 	}	

@@ -4,11 +4,11 @@ import {elements} from './base'
 
 export const renderItem = photo => {
 	const markup = `
-				<li class="shopping__item">
-                    <img src="${photo}" class="recipe__img">
+				<li class="photo__item">
+                    <img src="${photo}" class="restaurant__img">
                 </li>	
 	`
-	elements.shopping.insertAdjacentHTML('beforeend', markup)
+	elements.photo.insertAdjacentHTML('beforeend', markup)
 }
 
 export const clearCounter = () => {
@@ -16,5 +16,5 @@ export const clearCounter = () => {
 }
 
 export const clearViews = () => {
-	elements.shopping.innerHTML = '';
+	elements.photo.innerHTML = '';
 }

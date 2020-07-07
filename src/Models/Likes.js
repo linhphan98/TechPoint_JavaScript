@@ -22,7 +22,7 @@ export default class Likes {
 		return this.likes.length;
 	}
 
-	// Persist data in the local storage so we do not lose the liked recipe when we reload the page 
+	// Persist data in the local storage so we do not lose the liked restaurant when we reload the page 
 	
 	persistData(){
 		// convert the entire array into a string 

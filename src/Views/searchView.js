@@ -10,15 +10,8 @@ export const clearResults = () => {
 	elements.searchResPages.innerHTML = "";
 }
 
-/*
-	Pasta with tomato and spinach 
-acc: 0 -- acc + cur.length = 5 -- newTitle = ['Pasta']
-acc: 5 -- acc + cur.length = 9 -- newTitle = ['Pasta', 'with']
-acc: 9 -- acc + cur.length = 15 -- newTitle = ['Pasta', 'with', 'tomato']
-acc: 15 -- acc + cur.length = 18 -- newTitle = ['Pasta','with', 'tomato']
-acc: 18 -- acc + cur.length = 24 -- newTitle = ['Pasta','with', 'tomato']
-*/ 
-export const limitRecipeTitle = (title, limit = 17) => {
+
+export const limitRestaurantTitle = (title, limit = 17) => {
 	const newTitle = []; 
 
 	if(title.length > limit){
@@ -33,16 +26,16 @@ export const limitRecipeTitle = (title, limit = 17) => {
 	return title;
 }
 
-const renderRecipe = recipe => {
+const renderRestaurant = restaurant => {
 	const markup = `
 						<li>
-                            <a class="results__link" href="#${recipe.id}">
+                            <a class="results__link" href="#${restaurant.id}">
                                 <figure class="results__fig">
-                                    <img src="${recipe.image_url}" alt="${recipe.name}">
+                                    <img src="${restaurant.image_url}" alt="${restaurant.name}">
                                 </figure>
                                 <div class="results__data">
-                                    <h4 class="results__name">${limitRecipeTitle(recipe.name)}</h4>
-                                    <p class="results__author">Rating: ${recipe.rating}</p>
+                                    <h4 class="results__name">${limitRestaurantTitle(restaurant.name)}</h4>
+                                    <p class="results__author">Rating: ${restaurant.rating}</p>
                                 </div>
                             </a>
                         </li>
@@ -78,15 +71,14 @@ const renderButton = (page, numOfResult, resPerPage) => {
 
 }
 
-export const renderResult = (recipes, page = 1, resPerPage = 10) => {
+export const renderResult = (restaurants, page = 1, resPerPage = 10) => {
 	// render results of current page
 	const start = (page - 1) * resPerPage; 
 	const end = start + resPerPage;
 
-	recipes.businesses.slice(start, end).forEach(renderRecipe)
-	console.log(recipes.businesses.length)
+	restaurants.businesses.slice(start, end).forEach(renderRestaurant)
 	// render the pagination button 
-	renderButton(page, recipes.businesses.length, resPerPage)
+	renderButton(page, restaurants.businesses.length, resPerPage)
 } 
 
 

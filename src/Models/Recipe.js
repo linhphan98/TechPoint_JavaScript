@@ -5,7 +5,7 @@ export default class Recipe {
 		this.id = id;
 	}
 
-	async getRecipe(){
+	async getRestaurant(){
 		try{
 			const apiKey = 'S2WudF_G4sgSQ0ONjnVV6O0-80Vtk9PtYsRI8E_kAmPzkQKfuBTFIl5gPNhl44fZIm80uGPGH4c6Qc7X4QGd-yDiwkiVxbrPaMELdx-_tUCQIWtzADTykK-3cL78XnYx';
 
@@ -37,17 +37,6 @@ export default class Recipe {
 			console.log(error)
 			alert('Something went wrong')
 		}
-	}
-
-	calcServing(){
-		this.seating = 4;
-	}
-
-	updateServing(type) {
-		// Servings 
-		const newServing = type === 'dec' ? this.seating - 1 : this.seating + 1;
-		
-		this.seating = newServing;
 	}
 }
 

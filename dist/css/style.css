@@ -301,15 +301,15 @@ body {
   .likes__btn--next {
     float: right; }
 
-.recipe {
+.restaurant {
   background-color: #F9F5F3;
   border-top: 1px solid #fff; }
-  .recipe__fig {
+  .restaurant__fig {
     height: 30rem;
     position: relative;
     transform: scale(1.04) translateY(-1px);
     transform-origin: top; }
-    .recipe__fig::before {
+    .restaurant__fig::before {
       content: '';
       display: block;
       height: 100%;
@@ -319,12 +319,12 @@ body {
       left: 0;
       background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
       opacity: .6; }
-  .recipe__img {
+  .restaurant__img {
     width: 100%;
     display: block;
     height: 100%;
     object-fit: cover; }
-  .recipe__title {
+  .restaurant__title {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -336,42 +336,42 @@ body {
     width: 70%;
     line-height: 1.95;
     text-align: center; }
-    .recipe__title span {
+    .restaurant__title span {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
       padding: 1.3rem 2rem;
       background-image: linear-gradient(to right bottom, #FBDB89, #F48982); }
-  .recipe__details {
+  .restaurant__details {
     display: flex;
     align-items: center;
     padding: 8rem 3rem 3rem 3rem; }
-  .recipe__info {
+  .restaurant__info {
     font-size: 1.5rem;
     text-transform: uppercase;
     display: flex;
     align-items: center; }
-    .recipe__info:not(:last-child) {
+    .restaurant__info:not(:last-child) {
       margin-right: 4rem; }
-  .recipe__info-icon {
+  .restaurant__info-icon {
     height: 2rem;
     width: 2rem;
     fill: #F59A83;
     margin-right: 1rem; }
-  .recipe__info-data {
+  .restaurant__info-data {
     margin-right: .4rem;
     font-weight: 600; }
-  .recipe__info-buttons {
+  .restaurant__info-buttons {
     display: flex;
     margin-left: 1.5rem;
     visibility: hidden;
     opacity: 0;
     transform: translateY(5px);
     transition: all .4s; }
-  .recipe:hover .recipe__info-buttons {
+  .restaurant:hover .restaurant__info-buttons {
     visibility: visible;
     opacity: 1;
     transform: translateY(0); }
-  .recipe__love {
+  .restaurant__love {
     background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
     border-radius: 50%;
     border: none;
@@ -383,15 +383,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .recipe__love:hover {
+    .restaurant__love:hover {
       transform: scale(1.07); }
-    .recipe__love:focus {
+    .restaurant__love:focus {
       outline: none; }
-    .recipe__love svg {
+    .restaurant__love svg {
       height: 2.75rem;
       width: 2.75rem;
       fill: #fff; }
-  .recipe__ingredients {
+  .restaurant__ingredients {
     padding: 4rem 5rem;
     font-size: 1.5rem;
     line-height: 1.4;
@@ -399,16 +399,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
-  .recipe__ingredient-list {
+  .restaurant__ingredient-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1.5rem;
     grid-row-gap: 2.5rem;
     list-style: none;
     margin-bottom: 3rem; }
-  .recipe__item {
+  .restaurant__item {
     display: flex; }
-  .recipe__icon {
+  .restaurant__icon {
     height: 1.8rem;
     width: 1.8rem;
     fill: #F59A83;
@@ -418,39 +418,39 @@ body {
     margin-right: 1rem;
     flex: 0 0 auto;
     margin-top: .1rem; }
-  .recipe__count {
+  .restaurant__count {
     margin-right: .5rem;
     flex: 0 0 auto; }
-  .recipe__directions {
+  .restaurant__directions {
     padding: 4rem;
     padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center; }
-  .recipe__directions-text {
+  .restaurant__directions-text {
     font-size: 1.5rem;
     text-align: center;
     width: 90%;
     margin-bottom: 3rem;
     color: #968B87; }
-  .recipe__by {
+  .restaurant__by {
     font-weight: 700; }
 
-.shopping {
+.photo {
   padding: 3rem 4rem;
   display: flex;
   flex-direction: column; }
-  .shopping__list {
+  .photo__list {
     list-style: none;
     max-height: 77rem;
     overflow: scroll; }
-  .shopping__item {
+  .photo__item {
     display: flex;
     align-items: flex-start;
     padding: 1.3rem 0;
     border-bottom: 1px solid #F2EFEE;
     position: relative; }
-  .shopping__count {
+  .photo__count {
     flex: 0 0 7.5rem;
     padding: .4rem .5rem;
     border: 1px solid #F2EFEE;
@@ -459,7 +459,7 @@ body {
     cursor: pointer;
     display: flex;
     justify-content: space-between; }
-    .shopping__count input {
+    .photo__count input {
       color: inherit;
       font-family: inherit;
       font-size: 1.2rem;
@@ -467,17 +467,17 @@ body {
       border: none;
       width: 3.7rem;
       border-radius: 3px; }
-      .shopping__count input:focus {
+      .photo__count input:focus {
         outline: none;
         background-color: #F2EFEE; }
-    .shopping__count p {
+    .photo__count p {
       font-size: 1.2rem; }
-  .shopping__description {
+  .photo__description {
     flex: 1;
     font-size: 1.3rem;
     margin-top: .4rem;
     margin-right: 1.5rem; }
-  .shopping__delete {
+  .photo__delete {
     margin-top: .5rem;
     position: absolute;
     right: 0;
@@ -487,6 +487,6 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: all .5s; }
-  .shopping__item:hover .shopping__delete {
+  .photo__item:hover .photo__delete {
     opacity: 1;
     visibility: visible; }

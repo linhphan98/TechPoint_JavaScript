@@ -1,10 +1,10 @@
 import {elements} from './base'
-import {limitRecipeTitle} from './searchView'
+import {limitRestaurantTitle} from './searchView'
 
 export const toggleLikeButton = isLiked => {
 	const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined'
-	// selecting the use element in recipe__love to change the attribute of outlined or not
-	document.querySelector('.recipe__love use').setAttribute('href', `img/icons.svg#${iconString}`); 
+	// selecting the use element in restaurant__love to change the attribute of outlined or not
+	document.querySelector('.restaurant__love use').setAttribute('href', `img/icons.svg#${iconString}`); 
 }
 
 export const toggleLikeMenu = numLikes => {
@@ -19,7 +19,7 @@ export const renderLikes = like => {
                     <img src="${like.img}" alt="${like.name}">
                 </figure>
                 <div class="likes__data">
-                    <h4 class="likes__name">${limitRecipeTitle(like.name)}</h4>
+                    <h4 class="likes__name">${limitRestaurantTitle(like.name)}</h4>
                     <p class="likes__author">${like.rating}</p>
                 </div>
             </a>
