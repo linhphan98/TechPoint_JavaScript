@@ -9,4 +9,4 @@ app.use(cors())
 const Router = require("./id");
 
 app.use(`/`, Router);
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3306);

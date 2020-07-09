@@ -1,10 +1,11 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-	host: "127.0.0.1",
-	user: "root",
-	password: "iloveyouIU123!",
-	database: "SOS_Challenge"
+	host: "dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+	user: "txpzh1mifchp5uxq",
+	password: "zgapwnjg44tygeph",
+	database: "xymi20vxow5buos8",
+	port: "3306"
 });
 
 connection.connect((err)=> {
@@ -14,18 +15,5 @@ else
 	console.log('Connection Failed!'+ JSON.stringify(err,undefined,2));
 });
 
-// const port = process.env.PORT || 8080;
-// app.listen(port, () => console.log(`Listening on port ${port}..`));
-
-// app.get(`/#${id}` , (req, res) => {
-// 	connection.query(`select * from restaurants where restaurant_id = "${id}"`, (err) => {
-// 		if (!err){
-// 			this.restaurant = row;
-// 			return this.restaurant
-// 		}else{
-// 			console.log(err);
-// 		}
-// 	});
-// })
 
 module.exports = connection;
