@@ -5,14 +5,15 @@ var app = express();
 var cors = require('cors')
 app.use(bodyparser.json())
 app.use(cors())
-const port = process.env.PORT || 3000
+var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 
 const Router = require("./id");
 
 app.use(`/`, Router);
 
-app.listen(port, '0.0.0.0' , error => (
+app.listen(server_port, server_host , error => (
   error
     ? console.error(error)
-    : console.info(`Listening on port ${port}. Visit http://localhost:${port}/ in your browser.`)
+    : console.info(`Listening on port ${server_port}`)
 ));
