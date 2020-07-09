@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 const PORT = process.env.PORT || 8080;
 const server_host = process.env.YOUR_HOST || '0.0.0.0';
+const webpack = require('webpack')
 
 module.exports = {
 	entry: ['babel-polyfill','./src/js/index.js'], // index.js 
