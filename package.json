@@ -1,8 +1,11 @@
 {
-  "name": "forkify",
+  "name": "Pandemic Pioneers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "13.1.0"
+  },
   "scripts": {
     "dev": "webpack --mode development",
     "heroku-postbuild": "npm install",
