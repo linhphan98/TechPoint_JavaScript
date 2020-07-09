@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "heroku-postbuild": "npm install",
-    "build": "webpack --config webpack.prod.config.js",
+    "build": "webpack --mode production --config ./webpack.prod.config.js",
     "start": "webpack-dev-server --mode development --open"
   },
   "author": "",
