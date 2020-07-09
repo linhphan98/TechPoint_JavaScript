@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const PORT = process.env.PORT || 80
 
 module.exports = {
 	entry: ['babel-polyfill','./src/js/index.js'], // index.js 
@@ -10,7 +11,7 @@ module.exports = {
 	devServer: {
 		contentBase: './dist',
 		compress: true,
-		port: process.env.PORT || 80
+		port: PORT
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

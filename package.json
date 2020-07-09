@@ -11,8 +11,7 @@
     "dev": "webpack --mode development",
     "heroku-postbuild": "npm install",
     "build": "webpack --config webpack.prod.config.js",
-    "start": "webpack-dev-server --mode development --open",
-    "postinstall": "npm start"
+    "start": "webpack-dev-server --mode development --open"
   },
   "author": "",
   "license": "ISC",
