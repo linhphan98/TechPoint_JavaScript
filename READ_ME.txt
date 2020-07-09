@@ -1,0 +1,3 @@
+- installl nodejs
+- in terminal: npm install
+- in terminal to run: npm start
