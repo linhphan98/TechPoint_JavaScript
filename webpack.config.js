@@ -15,7 +15,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: './src/index.html'
-		})
+		}),
+		new webpack.DefinePlugin({
+            'process.env': JSON.stringify('development')
+        })
 	], 
 	module: {
 		rules: [
@@ -32,5 +35,5 @@ module.exports = {
 	    fs: 'empty',
 	    net: 'empty',
 	    tls: 'empty',
-	}
+	},
 };
