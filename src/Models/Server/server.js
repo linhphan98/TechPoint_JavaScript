@@ -5,9 +5,9 @@ var app = express();
 var cors = require('cors')
 app.use(bodyparser.json())
 app.use(cors())
-const PORT = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 const Router = require("./id");
 
 app.use(`/`, Router);
-app.listen(PORT);
+app.listen(port);
