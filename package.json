@@ -1,10 +1,11 @@
 {
-  "name": "Pandemic Pioneers",
+  "name": "PandemicPioneers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "13.1.0"
+    "node": "13.1.0",
+    "npm": "6.12.1"
   },
   "scripts": {
     "dev": "webpack --mode development",
