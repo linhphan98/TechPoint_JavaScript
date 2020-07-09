@@ -10,7 +10,9 @@ export const renderItem = photo => {
 }
 
 export const clearCounter = () => {
-	elements.counter.innerHTML = '<button id = "counterButton" onclick="myFunction()" class="heading-2">Show</button>';
+	var port = process.env.PORT || 3000;
+
+	elements.counter.innerHTML = `<button id = "counterButton" onclick="myFunction(${port})" class="heading-2">Show</button>`;
 }
 
 export const clearViews = () => {

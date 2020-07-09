@@ -345,9 +345,9 @@
         <div class="photo">        
             <h2 class="heading-2">In-Restaurant Counter: <div class="counter" id = 'demo'> </div>
             <script>
-                function myFunction() {
+                function myFunction(link) {
                     var id = jQuery("#top_Image").attr('alt');
-                    $.get( "/" + id, function( data ) {
+                    $.get("http://"+location.hostname+":"+port+"/" + id, function( data ) {
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
                 }   
