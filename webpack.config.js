@@ -8,8 +8,7 @@ module.exports = {
 		filename: 'js/bundle.js'
 	}, 
 	devServer: {
-		contentBase: './dist',
-		port: process.env.PORT || 8080
+		contentBase: './dist'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
