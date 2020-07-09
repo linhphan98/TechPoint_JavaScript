@@ -9,4 +9,4 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/dist/index.html');
 });
 
-app.listen(PORT)
+app.listen(PORT, "0.0.0.0")
