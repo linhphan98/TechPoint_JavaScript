@@ -16,7 +16,8 @@ module.exports = {
 		contentBase: './dist',
 		hot: true,
 		host: server_host,
-		port: PORT
+		port: PORT,
+		disableHostCheck: true
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
