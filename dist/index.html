@@ -347,7 +347,7 @@
             <script>
                 function myFunction() {
                     var id = jQuery("#top_Image").attr('alt');
-                    $.get( "https://pandemic-pioneers-draft.herokuapp.com:3306/" + id, function( data ) {
+                    $.get( "pandemic-pioneers-draft.herokuapp.com/" + id, function( data ) {
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
                 }   
