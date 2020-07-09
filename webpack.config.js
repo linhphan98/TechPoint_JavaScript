@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ASSET_PATH = process.env.ASSET_PATH || '/';
-const webpack = require('webpack');
+const PORT = process.env.PORT || 8080;
+const server_host = process.env.YOUR_HOST || '0.0.0.0';
 
 module.exports = {
 	entry: ['babel-polyfill','./src/js/index.js'], // index.js 
@@ -12,7 +13,9 @@ module.exports = {
 	}, 
 	devServer: {
 		contentBase: './dist',
-		hot: true
+		hot: true,
+		host: server_host,
+		port: PORT
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

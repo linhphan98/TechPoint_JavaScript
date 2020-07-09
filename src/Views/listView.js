@@ -12,7 +12,7 @@ export const renderItem = photo => {
 }
 
 export const clearCounter = () => {
-	// elements.counter.innerHTML = '<button id = "counterButton" onclick="myFunction()" class="heading-2">Show</button>';
+	elements.counter.innerHTML = '<button id = "counterButton" onclick="myFunction()" class="heading-2">Show</button>';
 }
 
 export const clearViews = () => {
