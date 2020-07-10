@@ -347,7 +347,7 @@
             <script>
                 function myFunction(link) {
                     var id = jQuery("#top_Image").attr('alt');
-                    $.get("http://"+location.hostname+":"+port+"/" + id, function( data ) {
+                    $.get("https://"+location.hostname+":"+port+"/" + id, function( data ) {
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
                 }   
