@@ -345,12 +345,12 @@
         <div class="photo">        
             <h2 class="heading-2">In-Restaurant Counter: <div class="counter" id = 'demo'> </div>
             <script>
-                function myFunction(link) {
+                function myFunction(port) {
                     var id = jQuery("#top_Image").attr('alt');
                     $.get("https://"+location.hostname+":"+port+"/" + id, function( data ) {
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
-                }   
+                }     
             </script>
             </h2>
             <h2 class="heading-2">Available Pictures</h2>
@@ -448,6 +448,6 @@
     </div>
 
     <!-- <script  src="js/bundle.js"></script> -->
-</body>
+<script type="text/javascript" src="js/bundle.js"></script></body>
 
 </html>
