@@ -6,7 +6,7 @@ var cors = require('cors')
 app.use(bodyparser.json())
 app.use(cors())
 var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
-var server_host = process.env.HOST || '0.0.0.0';
+var server_host = process.env.HOST || '173.255.237.135';
 
 app.get("/:id" , (req,res) => {
 	mysql.query(`select * from restaurants where restaurant_id = "${req.params.id}"`,(err,rows)=>{

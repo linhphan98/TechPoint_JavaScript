@@ -1,2 +1,2 @@
 web: npm start
-worker: npm run build
+worker: ./node_modules/webpack-dev-server/bin/webpack-dev-server.js
