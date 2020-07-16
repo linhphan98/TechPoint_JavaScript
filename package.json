@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "heroku-postbuild": "npm install",
-    "build": "webpack --config ./webpack.prod.config.js",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --open"
+    "build": "webpack --config ./webpack.prod.config.js --mode production",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production --open"
   },
   "author": "",
   "license": "ISC",
