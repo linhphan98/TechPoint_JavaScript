@@ -7,17 +7,15 @@ var server_host = process.env.HOST || '0.0.0.0';
 
 app.get("/counter/:id", (req,res) => {
 	mysql.query(`select * from restaurants where restaurant_id = "${req.params.id}"`,(err,rows)=>{
-		if(err) throw err;
-		res.send({count:rows[0]["numberOfPeople"]})
+		if(rows.length == 0){
+			res.send({count:'--'})
+		}else{
+			res.send({count:rows[0]["numberOfPeople"]})
+		}
 	})
 })
 
 app.use(express.static(path.join(__dirname, 'dist')));
-
-// app.get('/', function(request, response) {
-//   response.sendFile(__dirname + '/dist/index.html');
-// });
-
 
 app.listen(server_port, server_host, error => (
   error
