@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PORT = process.env.PORT || 80;
-const server_host = process.env.HOST || '173.255.237.135';
+const server_host = process.env.HOST || '0.0.0.0';
 const webpack = require('webpack')
 
 module.exports = {

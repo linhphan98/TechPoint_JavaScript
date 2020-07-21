@@ -8,7 +8,8 @@ export const elements = {
 	photo: document.querySelector('.photo__list'),
 	likesMenu: document.querySelector('.likes__field'), 
 	likesList: document.querySelector('.likes__list'),
-	counter: document.querySelector('.counter')
+	counter: document.querySelector('.counter'),
+	update: document.querySelector('.update')
 }
 
 const elementStrings = {

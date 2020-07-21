@@ -345,13 +345,29 @@
         <div class="photo">        
             <h2 class="heading-2">In-Restaurant Counter: <div class="counter" id = 'demo'> </div>
             <script>
-                function myFunction(port) {
+                function myFunction() {
                     var id = jQuery("#top_Image").attr('alt');
-                    $.get("https://"+location.hostname+":"+port+"/" + id, function( data ) {
+                    $.get("/counter/" + id, function( data ) {
                         document.getElementById("demo").innerHTML = data['count'] + " people";
                     });
-                }     
+                    
+                }
             </script>
+            <!-- <div class="update"> </div>
+                <script>
+                    function myFunction_update(port){
+                        var id = jQuery("#top_Image").attr('alt');
+                        var profiles = { 'id' : id,
+                                        'counter': 90 };
+                        $.post({
+                            traditional: true,
+                            url: "http://"+location.hostname+":"+port+"/counter",
+                            contentType: 'application/json',
+                            data: JSON.stringify( profiles ),
+                            dataType: 'json',
+                        });
+                    }    
+                </script> -->
             </h2>
             <h2 class="heading-2">Available Pictures</h2>
 

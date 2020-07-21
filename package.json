@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
-    "heroku-postbuild": "npm install",
     "build": "webpack --config ./webpack.prod.config.js --mode production",
+    "heroku-postbuild": "npm install npm run-script build",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production --open"
   },
   "author": "",
