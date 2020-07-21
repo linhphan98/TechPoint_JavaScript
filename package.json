@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --config ./webpack.prod.config.js --mode production",
-    "heroku-postbuild": "npm install npm run-script build",
+    "heroku-postbuild": "npm install",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production --open"
   },
+  "heroku-run-build-script": true,
   "author": "",
   "license": "ISC",
   "devDependencies": {
