@@ -6,7 +6,7 @@ var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 var server_host = process.env.HOST || '0.0.0.0';
 
 app.get("/counter/:id", (req,res) => {
-	mysql.query(`select * from restaurants where restaurant_id = "${req.params.id}"`,(err,rows)=>{
+	mysql.query("select * from restaurants where restaurant_id = ?" , [req.params.id],(err,rows)=>{
 		if(rows.length == 0){
 			res.send({count:'--'})
 		}else{
@@ -14,6 +14,17 @@ app.get("/counter/:id", (req,res) => {
 		}
 	})
 })
+
+// update with arduino
+// app.post("/update/:id", (req,res) => {
+// 	mysql.query(`select * from restaurants where restaurant_id = "${req.params.id}"`,(err,rows)=>{
+// 		if(rows.length == 0){
+// 			console.log('Error')
+// 		}else{
+// 			console.log('Update')
+// 		}
+// 	})
+// })
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
