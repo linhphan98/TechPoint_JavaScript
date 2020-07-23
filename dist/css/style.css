@@ -122,13 +122,14 @@ body {
     margin-right: .3rem; }
 
 .heading-2 {
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 600;
   color: #F59A83;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
-  transform: skewY(-3deg); }
+  transform: skewY(-3deg);
+  }
 
 .copyright {
   color: #968B87;
@@ -263,7 +264,7 @@ body {
       top: 0;
       left: 0;
       background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
-      opacity: .4; }
+      opacity: 0; }
     .results__fig img,
     .likes__fig img {
       display: block;
@@ -318,7 +319,7 @@ body {
       top: 0;
       left: 0;
       background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
-      opacity: .6; }
+      opacity: 0; }
   .restaurant__img {
     width: 100%;
     display: block;
